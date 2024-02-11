@@ -5,6 +5,7 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 void main() {
+  print("this is Azkar App");
   runApp(
     DevicePreview(
       enabled: !kReleaseMode,
