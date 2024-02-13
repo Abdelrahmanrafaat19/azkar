@@ -1,11 +1,8 @@
-import 'package:azkar/module/quran.dart';
-/* import 'package:device_preview/device_preview.dart';
-import 'package:flutter/foundation.dart'; */
+import 'package:azkar/module/surh_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:quran/quran.dart' as quran;
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -47,6 +44,6 @@ class MyApp extends StatelessWidget {
             home: child,
           );
         },
-        child: const QuranScreen());
+        child: const SurhScreen());
   }
 }

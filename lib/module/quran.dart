@@ -1,6 +1,7 @@
 import 'package:azkar/shared/theme/color.dart';
 import 'package:azkar/shared/theme/image.dart';
 import 'package:azkar/shared/widget/custam_container_quran_screen.dart';
+import 'package:azkar/shared/widget/custam_list_quran.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -31,6 +32,7 @@ class _QuranScreenState extends State<QuranScreen>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color(0xffFAF6EB),
       appBar: AppBar(
         centerTitle: true,
         leadingWidth: 40.w,
@@ -65,22 +67,18 @@ class _QuranScreenState extends State<QuranScreen>
       ),
       body: Padding(
         padding: EdgeInsets.only(left: 10.w, right: 10.w),
-        child: const CustomScrollView(
+        child: CustomScrollView(
           slivers: [
-            CustamContainerQuranScreen(),
+            const CustamContainerQuranScreen(),
+            SliverToBoxAdapter(
+              child: SizedBox(
+                height: 10.h,
+              ),
+            ),
+            const CustamListQuran(),
           ],
         ),
       ),
     );
   }
-}
-
-String replaceNumbers(String number) {
-  const english = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
-  const farsi = ['۰', '۱', '۲', '۳', '٤', '۵', '٦', '۷', '۸', '۹'];
-  for (int i = 0; i < english.length; i++) {
-    number = number.replaceAll(english[i], farsi[i]);
-  }
-
-  return number;
 }
