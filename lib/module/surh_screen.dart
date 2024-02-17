@@ -17,13 +17,14 @@ class _SurhScreenState extends State<SurhScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          backgroundColor: Color(0xffE9E1D4),
+          backgroundColor: const Color(0xffE9E1D4),
           centerTitle: true,
           leadingWidth: 40.w,
           leading: Padding(
             padding: EdgeInsets.only(right: 10.w),
             child: SvgPicture.asset(
               Assets.CircleEllipsis,
+              // ignore: deprecated_member_use
               color: SharedColor.mainBrown,
               height: 20.h,
               width: 20.w,
@@ -42,6 +43,7 @@ class _SurhScreenState extends State<SurhScreen> {
               padding: EdgeInsets.only(left: 10.w),
               child: SvgPicture.asset(
                 Assets.BarsSort,
+                // ignore: deprecated_member_use
                 color: SharedColor.mainBrown,
                 height: 20.h,
                 width: 20.w,
@@ -51,7 +53,19 @@ class _SurhScreenState extends State<SurhScreen> {
         ),
         body: CustomScrollView(
           slivers: [
-            SliverList.builder(
+            SliverToBoxAdapter(
+              child: RichText(
+                text: TextSpan(
+                  children: [
+                    for (int i = 1; i <= quran.getVerseCount(2); i++)
+                      TextSpan(
+                        text: quran.getVerse(2, i, verseEndSymbol: true),
+                      ),
+                  ],
+                ),
+              ),
+            )
+            /*     SliverList.builder(
               itemCount: quran.getVerseCount(2),
               itemBuilder: (context, index) {
                 return Text(
@@ -61,7 +75,7 @@ class _SurhScreenState extends State<SurhScreen> {
                   ),
                 );
               },
-            )
+            ) */
           ],
         ));
   }

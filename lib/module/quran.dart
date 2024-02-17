@@ -32,7 +32,7 @@ class _QuranScreenState extends State<QuranScreen>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xffFAF6EB),
+      backgroundColor: const Color(0xffFAF6EB),
       appBar: AppBar(
         centerTitle: true,
         leadingWidth: 40.w,
@@ -40,6 +40,7 @@ class _QuranScreenState extends State<QuranScreen>
           padding: EdgeInsets.only(right: 10.w),
           child: SvgPicture.asset(
             Assets.CircleEllipsis,
+            // ignore: deprecated_member_use
             color: SharedColor.mainBrown,
             height: 20.h,
             width: 20.w,
@@ -58,6 +59,7 @@ class _QuranScreenState extends State<QuranScreen>
             padding: EdgeInsets.only(left: 10.w),
             child: SvgPicture.asset(
               Assets.BarsSort,
+              // ignore: deprecated_member_use
               color: SharedColor.mainBrown,
               height: 20.h,
               width: 20.w,

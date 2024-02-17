@@ -1,4 +1,5 @@
-import 'package:azkar/module/surh_screen.dart';
+import 'package:azkar/module/elsalah_time.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -44,6 +45,6 @@ class MyApp extends StatelessWidget {
             home: child,
           );
         },
-        child: const SurhScreen());
+        child: const ElsalahTime());
   }
 }
