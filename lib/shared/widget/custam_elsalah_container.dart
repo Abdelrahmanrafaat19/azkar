@@ -9,7 +9,7 @@ class CustamElsalahContainer extends StatelessWidget {
   Widget build(BuildContext context) {
     return SliverToBoxAdapter(
       child: Container(
-        padding: EdgeInsets.only(right: 15.w),
+        margin: EdgeInsets.symmetric(horizontal: 5.w),
         height: 200,
         width: double.infinity,
         decoration: BoxDecoration(
