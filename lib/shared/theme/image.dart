@@ -25,6 +25,10 @@ class Assets {
   /// assets/mute.png
   static const String Mute = "assets/mute.png";
 
+  /// Assets for OIP
+  /// assets/OIP.jpg
+  static const String OIP = "assets/OIP.jpg";
+
   /// Assets for Plus
   /// assets/plus.png
   static const String Plus = "assets/plus.png";
