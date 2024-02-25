@@ -7,18 +7,16 @@ class CustamElsalahContainer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SliverToBoxAdapter(
-      child: Container(
-        margin: EdgeInsets.symmetric(horizontal: 5.w),
-        height: 200,
-        width: double.infinity,
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(15.r),
-          image: const DecorationImage(
-            fit: BoxFit.cover,
-            image: AssetImage(Assets.Islam6938153),
-            opacity: 0.8,
-          ),
+    return Container(
+      margin: EdgeInsets.symmetric(horizontal: 5.w),
+      height: 200,
+      width: double.infinity,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(15.r),
+        image: const DecorationImage(
+          fit: BoxFit.cover,
+          image: AssetImage(Assets.Islam6938153),
+          opacity: 0.8,
         ),
       ),
     );
