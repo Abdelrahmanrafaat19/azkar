@@ -1,4 +1,4 @@
-import 'package:azkar/module/azkar_screen.dart';
+import 'package:azkar/module/azkar_dispaly.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -44,6 +44,6 @@ class MyApp extends StatelessWidget {
             home: child,
           );
         },
-        child: const AzkarScreen());
+        child: const AzkarDispalyScreen());
   }
 }
