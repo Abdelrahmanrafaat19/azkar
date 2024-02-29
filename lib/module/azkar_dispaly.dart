@@ -16,6 +16,7 @@ class _AzkarDispalyScreenState extends State<AzkarDispalyScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.transparent,
         leading: Icon(
           Icons.arrow_back_ios,
           color: SharedColor.mainBrown,

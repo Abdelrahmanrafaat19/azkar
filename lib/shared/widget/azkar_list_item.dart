@@ -1,7 +1,6 @@
-import 'package:awesome_icons/awesome_icons.dart';
 import 'package:azkar/shared/method/convert_number.dart';
-import 'package:azkar/shared/method/scalfactor_method.dart';
 import 'package:azkar/shared/theme/color.dart';
+import 'package:azkar/shared/widget/icon_in_azkar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -30,7 +29,7 @@ class _AzkarListItemState extends State<AzkarListItem> {
         }
       },
       child: Container(
-        padding: const EdgeInsets.only(bottom: 10),
+        padding: EdgeInsets.only(bottom: 10.h),
         decoration: BoxDecoration(
           color: SharedColor.whtieCream,
           borderRadius: BorderRadius.circular(15.r),
@@ -55,10 +54,10 @@ class _AzkarListItemState extends State<AzkarListItem> {
                   color: SharedColor.mainBrown,
                   borderRadius: BorderRadius.circular(15.r)),
               child: Text(
-                "أَعُوذُ بِاللهِ مِنْ الشَّيْطَانِ الرَّجِيمِاللّهُ لاَ إِلَـهَ إِلاَّ هُوَ الْحَيُّ الْقَيُّومُ لاَ تَأْخُذُهُ سِنَةٌ وَلاَ نَوْمٌ لَّهُ مَا فِي السَّمَاوَاتِ وَمَا فِي الأَرْضِ مَن ذَا الَّذِي يَشْفَعُ عِنْدَهُ إِلاَّ بِإِذْنِهِ يَعْلَمُ مَا بَيْنَ أَيْدِيهِمْ وَمَا خَلْفَهُمْ وَلاَ يُحِيطُونَ بِشَيْءٍ مِّنْ عِلْمِهِ إِلاَّ بِمَا شَاء وَسِعَ كُرْسِيُّهُ السَّمَاوَاتِ وَالأَرْضَ وَلاَ يَؤُودُهُ حِفْظُهُمَا وَهُوَ الْعَلِيُّ الْعَظِيمُ.",
+                "أَعُوذُ بِاللهِ مِنْ الشَّيْطَانِ الرَّجِيمِ اللّهُ لاَ إِلَـهَ إِلاَّ هُوَ الْحَيُّ الْقَيُّومُ لاَ تَأْخُذُهُ سِنَةٌ وَلاَ نَوْمٌ لَّهُ مَا فِي السَّمَاوَاتِ وَمَا فِي الأَرْضِ مَن ذَا الَّذِي يَشْفَعُ عِنْدَهُ إِلاَّ بِإِذْنِهِ يَعْلَمُ مَا بَيْنَ أَيْدِيهِمْ وَمَا خَلْفَهُمْ وَلاَ يُحِيطُونَ بِشَيْءٍ مِّنْ عِلْمِهِ إِلاَّ بِمَا شَاء وَسِعَ كُرْسِيُّهُ السَّمَاوَاتِ وَالأَرْضَ وَلاَ يَؤُودُهُ حِفْظُهُمَا وَهُوَ الْعَلِيُّ الْعَظِيمُ.",
                 textAlign: TextAlign.center,
                 style: TextStyle(
-                  fontSize: getResponsiveFont(context, fontSize: 15),
+                  fontSize: 18.w,
                   color: Colors.white,
                   fontFamily: "cairo",
                   fontWeight: FontWeight.w600,
@@ -115,39 +114,3 @@ class _AzkarListItemState extends State<AzkarListItem> {
     );
   }
 }
-
-class IconInAzkar extends StatelessWidget {
-  Widget widget;
-  IconInAzkar({
-    super.key,
-    required this.widget,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return CircleAvatar(
-        backgroundColor: const Color(0xff9f8674), radius: 20, child: widget);
-  }
-}
-/*   Expanded(
-                  flex: 1,
-                  child: widget.counter > 0
-                      ? Text(
-                          replaceNumbers(widget.counter.toString()),
-                          textAlign: TextAlign.center,
-                          style: TextStyle(
-                            fontSize: getResponsiveFont(context, fontSize: 15),
-                            color: SharedColor.mainBrown,
-                            fontFamily: "cairo",
-                            fontWeight: FontWeight.w600,
-                          ),
-                        )
-                      : const Icon(
-                          Icons.task_alt,
-                          color: Colors.green,
-                          size: 35,
-                          shadows: <Shadow>[
-                            Shadow(color: Colors.green, blurRadius: 15.0)
-                          ],
-                        ),
-                ), */
