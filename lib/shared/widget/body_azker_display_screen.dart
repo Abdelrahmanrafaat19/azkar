@@ -11,23 +11,14 @@ class BodyAzkarDispalyScreen extends StatefulWidget {
 class _BodyAzkarDispalyScreenState extends State<BodyAzkarDispalyScreen> {
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          ListView.builder(
-            physics: const NeverScrollableScrollPhysics(),
-            shrinkWrap: true,
-            itemCount: 5,
-            itemBuilder: (context, index) {
-              return AzkarListItem(
-                arrange: index + 1,
-                counter: index,
-              );
-            },
-          )
-        ],
-      ),
+    return ListView.builder(
+      itemCount: 5,
+      itemBuilder: (context, index) {
+        return AzkarListItem(
+          arrange: index + 1,
+          counter: index,
+        );
+      },
     );
   }
 }

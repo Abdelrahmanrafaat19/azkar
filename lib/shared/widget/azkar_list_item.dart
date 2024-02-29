@@ -1,3 +1,4 @@
+import 'package:awesome_icons/awesome_icons.dart';
 import 'package:azkar/shared/method/convert_number.dart';
 import 'package:azkar/shared/method/scalfactor_method.dart';
 import 'package:azkar/shared/theme/color.dart';
@@ -29,12 +30,9 @@ class _AzkarListItemState extends State<AzkarListItem> {
         }
       },
       child: Container(
-        padding: EdgeInsets.symmetric(vertical: 10.h),
+        padding: const EdgeInsets.only(bottom: 10),
         decoration: BoxDecoration(
           color: SharedColor.whtieCream,
-          border: Border.all(
-            color: SharedColor.babyBrown,
-          ),
           borderRadius: BorderRadius.circular(15.r),
           boxShadow: widget.counter == 0
               ? [
@@ -49,54 +47,67 @@ class _AzkarListItemState extends State<AzkarListItem> {
         ),
         margin: EdgeInsets.symmetric(vertical: 10.h, horizontal: 10.w),
         width: double.infinity,
-        child: Row(
+        child: Column(
           children: [
-            Expanded(
-              flex: 1,
-              child: Text(
-                replaceNumbers(widget.arrange.toString()),
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  fontSize: getResponsiveFont(context, fontSize: 20),
+            Container(
+              padding: const EdgeInsets.all(10),
+              decoration: BoxDecoration(
                   color: SharedColor.mainBrown,
-                  fontFamily: "cairo",
-                  fontWeight: FontWeight.w600,
-                ),
-              ),
-            ),
-            Expanded(
-              flex: 6,
+                  borderRadius: BorderRadius.circular(15.r)),
               child: Text(
                 "أَعُوذُ بِاللهِ مِنْ الشَّيْطَانِ الرَّجِيمِاللّهُ لاَ إِلَـهَ إِلاَّ هُوَ الْحَيُّ الْقَيُّومُ لاَ تَأْخُذُهُ سِنَةٌ وَلاَ نَوْمٌ لَّهُ مَا فِي السَّمَاوَاتِ وَمَا فِي الأَرْضِ مَن ذَا الَّذِي يَشْفَعُ عِنْدَهُ إِلاَّ بِإِذْنِهِ يَعْلَمُ مَا بَيْنَ أَيْدِيهِمْ وَمَا خَلْفَهُمْ وَلاَ يُحِيطُونَ بِشَيْءٍ مِّنْ عِلْمِهِ إِلاَّ بِمَا شَاء وَسِعَ كُرْسِيُّهُ السَّمَاوَاتِ وَالأَرْضَ وَلاَ يَؤُودُهُ حِفْظُهُمَا وَهُوَ الْعَلِيُّ الْعَظِيمُ.",
+                textAlign: TextAlign.center,
                 style: TextStyle(
                   fontSize: getResponsiveFont(context, fontSize: 15),
-                  color: SharedColor.mainBrown,
+                  color: Colors.white,
                   fontFamily: "cairo",
                   fontWeight: FontWeight.w600,
                 ),
               ),
             ),
-            Expanded(
-              flex: 1,
-              child: widget.counter > 0
-                  ? Text(
-                      replaceNumbers(widget.counter.toString()),
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                        fontSize: getResponsiveFont(context, fontSize: 15),
-                        color: SharedColor.mainBrown,
-                        fontFamily: "cairo",
-                        fontWeight: FontWeight.w600,
+            const SizedBox(
+              height: 20,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                IconInAzkar(
+                  widget: const Icon(
+                    Icons.share,
+                    color: Colors.white,
+                  ),
+                ),
+                widget.counter > 0
+                    ? IconInAzkar(
+                        widget: Text(
+                        replaceNumbers(widget.counter.toString()),
+                        textAlign: TextAlign.center,
+                        style: const TextStyle(
+                          fontFamily: "cairo",
+                          color: Colors.white,
+                        ),
+                      ))
+                    : const Icon(
+                        Icons.task_alt,
+                        color: Colors.green,
+                        size: 35,
+                        shadows: <Shadow>[
+                          Shadow(color: Colors.green, blurRadius: 15.0)
+                        ],
                       ),
-                    )
-                  : const Icon(
-                      Icons.task_alt,
-                      color: Colors.green,
-                      size: 35,
-                      shadows: <Shadow>[
-                        Shadow(color: Colors.green, blurRadius: 15.0)
-                      ],
-                    ),
+                IconInAzkar(
+                  widget: const Icon(
+                    Icons.favorite_border_outlined,
+                    color: Colors.white,
+                  ),
+                ),
+                IconInAzkar(
+                  widget: const Icon(
+                    Icons.copy,
+                    color: Colors.white,
+                  ),
+                ),
+              ],
             ),
           ],
         ),
@@ -104,3 +115,39 @@ class _AzkarListItemState extends State<AzkarListItem> {
     );
   }
 }
+
+class IconInAzkar extends StatelessWidget {
+  Widget widget;
+  IconInAzkar({
+    super.key,
+    required this.widget,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return CircleAvatar(
+        backgroundColor: const Color(0xff9f8674), radius: 20, child: widget);
+  }
+}
+/*   Expanded(
+                  flex: 1,
+                  child: widget.counter > 0
+                      ? Text(
+                          replaceNumbers(widget.counter.toString()),
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                            fontSize: getResponsiveFont(context, fontSize: 15),
+                            color: SharedColor.mainBrown,
+                            fontFamily: "cairo",
+                            fontWeight: FontWeight.w600,
+                          ),
+                        )
+                      : const Icon(
+                          Icons.task_alt,
+                          color: Colors.green,
+                          size: 35,
+                          shadows: <Shadow>[
+                            Shadow(color: Colors.green, blurRadius: 15.0)
+                          ],
+                        ),
+                ), */
