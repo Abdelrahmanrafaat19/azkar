@@ -1,8 +1,10 @@
 import 'package:azkar/model/azkar_model.dart';
+import 'package:azkar/shared/constant/alnapy.dart';
 import 'package:azkar/shared/constant/azan.dart';
 import 'package:azkar/shared/constant/azkar_data.dart';
 import 'package:azkar/shared/constant/evening_prayers.dart';
 import 'package:azkar/shared/constant/get_up.dart';
+import 'package:azkar/shared/constant/ibrahem.dart';
 import 'package:azkar/shared/constant/prayer_remembrances.dart';
 import 'package:azkar/shared/constant/sleeping_azkar.dart';
 import 'package:azkar/shared/theme/color.dart';
@@ -47,6 +49,10 @@ List<AzkarModel> azkarModeList = [
       ),
     ],
   ),
+  AzkarModel(mainTitle: "أدعية الأنبياء", subTitles: [
+    AzkarMainModel(azkarListModel: napyDoaa, mainTitl: "ادعية النبي"),
+    AzkarMainModel(azkarListModel: ibrahimAzkar, mainTitl: "ادعية إبراهيم"),
+  ])
 ];
 
 class _AzkarScreenState extends State<AzkarScreen> {
