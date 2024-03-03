@@ -1,6 +1,10 @@
 import 'package:azkar/model/azkar_model.dart';
+import 'package:azkar/shared/constant/azan.dart';
 import 'package:azkar/shared/constant/azkar_data.dart';
 import 'package:azkar/shared/constant/evening_prayers.dart';
+import 'package:azkar/shared/constant/get_up.dart';
+import 'package:azkar/shared/constant/prayer_remembrances.dart';
+import 'package:azkar/shared/constant/sleeping_azkar.dart';
 import 'package:azkar/shared/theme/color.dart';
 import 'package:azkar/shared/widget/custam_azkar_laist.dart';
 import 'package:flutter/material.dart';
@@ -20,15 +24,27 @@ List<AzkarModel> azkarModeList = [
     mainTitle: "أذكار",
     subTitles: [
       AzkarMainModel(
-          mainTitl: "أذكار الصباح", azkarListModel: citationForMorning),
+        mainTitl: "أذكار الصباح",
+        azkarListModel: citationForMorning,
+      ),
       AzkarMainModel(
-          mainTitl: "أذكار المساء", azkarListModel: eveningPrayersList)
-      /*  "أذكار الصباح",
-      "أذكار المساء",
-      "أذكار الاستيقاذ",
-      "أذكار النوم",
-      "تسابيح ما بعد الصلاة",
-      "الصلاة علي النبي", */
+        mainTitl: "أذكار المساء",
+        azkarListModel: eveningPrayersList,
+      ),
+      AzkarMainModel(
+        mainTitl: "تسابيح ما بعد الصلاة",
+        azkarListModel: prayersList,
+      ),
+      AzkarMainModel(
+        mainTitl: "أذكار قبل النوم",
+        azkarListModel: sleepingAzkar,
+      ),
+      AzkarMainModel(
+          azkarListModel: getUpAzlar, mainTitl: "أذكار الإستيقاظ من النوم"),
+      AzkarMainModel(
+        mainTitl: "أذكار الأذان",
+        azkarListModel: azanAzkarList,
+      ),
     ],
   ),
 ];
