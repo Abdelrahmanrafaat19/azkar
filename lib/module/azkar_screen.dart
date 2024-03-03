@@ -1,8 +1,11 @@
 import 'package:azkar/model/azkar_model.dart';
+import 'package:azkar/shared/constant/azkar_data.dart';
+import 'package:azkar/shared/constant/evening_prayers.dart';
 import 'package:azkar/shared/theme/color.dart';
 import 'package:azkar/shared/widget/custam_azkar_laist.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import '../model/list_of_azkar.dart';
 import '../shared/widget/custam_elsalah_container.dart';
 
 class AzkarScreen extends StatefulWidget {
@@ -13,18 +16,21 @@ class AzkarScreen extends StatefulWidget {
 }
 
 List<AzkarModel> azkarModeList = [
-  AzkarModel(mainTitle: "كتب", subTitles: [
-    "صحيح البخاري",
-    "صحيح مسلم",
-  ]),
-  AzkarModel(mainTitle: "أذكار", subTitles: [
-    "أذكار الصباح",
-    "أذكار المساء",
-    "أذكار الاستيقاذ",
-    "أذكار النوم",
-    "تسابيح ما بعد الصلاة",
-    "الصلاة علي النبي",
-  ]),
+  AzkarModel(
+    mainTitle: "أذكار",
+    subTitles: [
+      AzkarMainModel(
+          mainTitl: "أذكار الصباح", azkarListModel: citationForMorning),
+      AzkarMainModel(
+          mainTitl: "أذكار المساء", azkarListModel: eveningPrayersList)
+      /*  "أذكار الصباح",
+      "أذكار المساء",
+      "أذكار الاستيقاذ",
+      "أذكار النوم",
+      "تسابيح ما بعد الصلاة",
+      "الصلاة علي النبي", */
+    ],
+  ),
 ];
 
 class _AzkarScreenState extends State<AzkarScreen> {
@@ -33,6 +39,7 @@ class _AzkarScreenState extends State<AzkarScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
+          backgroundColor: Colors.transparent,
           leading: Icon(
             Icons.arrow_back_ios,
             color: SharedColor.mainBrown,

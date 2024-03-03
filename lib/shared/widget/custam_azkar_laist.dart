@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 class CustamAzkarList extends StatefulWidget {
   List<AzkarModel> azkarModel;
   bool visibleToggle;
+
   CustamAzkarList({
     super.key,
     required this.azkarModel,
@@ -27,6 +28,7 @@ class _CustamAzkarListState extends State<CustamAzkarList> {
       itemCount: widget.azkarModel.length,
       itemBuilder: (context, index) {
         return FinallyContainer(
+          azkarData: widget.azkarModel[index].subTitles,
           azkarModel: widget.azkarModel[index],
           visibleToggle: false,
         );

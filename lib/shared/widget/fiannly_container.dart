@@ -1,4 +1,5 @@
 import 'package:azkar/model/azkar_model.dart';
+import 'package:azkar/model/list_of_azkar.dart';
 import 'package:azkar/shared/theme/color.dart';
 import 'package:azkar/shared/widget/custam_list_drop_down_container_azkar.dart';
 import 'package:flutter/material.dart';
@@ -8,10 +9,12 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 class FinallyContainer extends StatefulWidget {
   AzkarModel azkarModel;
   bool visibleToggle;
+  List<AzkarMainModel> azkarData;
   FinallyContainer({
     super.key,
     required this.azkarModel,
     required this.visibleToggle,
+    required this.azkarData,
   });
 
   @override
@@ -97,7 +100,8 @@ class _FinallyContainerState extends State<FinallyContainer> {
             itemCount: widget.azkarModel.subTitles.length,
             itemBuilder: (context, index) {
               return CustomListDropDownContainer(
-                continerName: widget.azkarModel.subTitles[index],
+                azkarData: widget.azkarModel.subTitles[index].azkarListModel,
+                continerName: widget.azkarModel.subTitles[index].mainTitl,
               );
             },
           ),

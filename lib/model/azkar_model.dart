@@ -1,6 +1,8 @@
+import 'package:azkar/model/list_of_azkar.dart';
+
 class AzkarModel {
   String mainTitle;
-  List<String> subTitles;
+  List<AzkarMainModel> subTitles;
   AzkarModel({
     required this.mainTitle,
     required this.subTitles,

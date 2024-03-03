@@ -6,10 +6,11 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 // ignore: must_be_immutable
 class AzkarListItem extends StatefulWidget {
-  int arrange, counter;
+  int counter;
+  String zkr;
   AzkarListItem({
     super.key,
-    required this.arrange,
+    required this.zkr,
     required this.counter,
   });
 
@@ -54,7 +55,7 @@ class _AzkarListItemState extends State<AzkarListItem> {
                   color: SharedColor.mainBrown,
                   borderRadius: BorderRadius.circular(15.r)),
               child: Text(
-                "أَعُوذُ بِاللهِ مِنْ الشَّيْطَانِ الرَّجِيمِ اللّهُ لاَ إِلَـهَ إِلاَّ هُوَ الْحَيُّ الْقَيُّومُ لاَ تَأْخُذُهُ سِنَةٌ وَلاَ نَوْمٌ لَّهُ مَا فِي السَّمَاوَاتِ وَمَا فِي الأَرْضِ مَن ذَا الَّذِي يَشْفَعُ عِنْدَهُ إِلاَّ بِإِذْنِهِ يَعْلَمُ مَا بَيْنَ أَيْدِيهِمْ وَمَا خَلْفَهُمْ وَلاَ يُحِيطُونَ بِشَيْءٍ مِّنْ عِلْمِهِ إِلاَّ بِمَا شَاء وَسِعَ كُرْسِيُّهُ السَّمَاوَاتِ وَالأَرْضَ وَلاَ يَؤُودُهُ حِفْظُهُمَا وَهُوَ الْعَلِيُّ الْعَظِيمُ.",
+                widget.zkr,
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontSize: 18.w,
