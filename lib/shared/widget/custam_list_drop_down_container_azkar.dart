@@ -1,6 +1,5 @@
 import 'package:azkar/model/list_of_azkar.dart';
 import 'package:azkar/module/azkar_dispaly.dart';
-import 'package:azkar/shared/constant/azkar_data.dart';
 import 'package:azkar/shared/theme/color.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';

@@ -1,5 +1,3 @@
-import 'dart:collection';
-
 import 'package:azkar/model/list_of_azkar.dart';
 import 'package:azkar/shared/method/scalfactor_method.dart';
 import 'package:azkar/shared/theme/color.dart';
@@ -7,6 +5,7 @@ import 'package:azkar/shared/widget/body_azker_display_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+// ignore: must_be_immutable
 class AzkarDispalyScreen extends StatefulWidget {
   String mainTitle;
   List<AzkarListModel> azkarData;
