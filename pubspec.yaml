@@ -30,17 +30,20 @@ environment:
 dependencies:
   adhan: ^2.0.0+1
   awesome_icons: ^1.1.0
+  awesome_notifications: any
   cupertino_icons: ^1.0.2
   device_preview: ^1.1.0
   digital_lcd_number: ^0.1.2
   flutter:
     sdk: flutter
+  flutter_local_notifications: ^16.3.3
   flutter_localizations:
     sdk: flutter
   flutter_screenutil: ^5.9.0
   flutter_svg: ^2.0.9
   google_fonts: ^6.1.0
   intl: ^0.18.1
+  location: ^5.0.3
   quran: ^1.2.3
 
 dev_dependencies:

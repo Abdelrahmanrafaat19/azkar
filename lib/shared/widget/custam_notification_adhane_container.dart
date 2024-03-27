@@ -1,16 +1,26 @@
+import 'package:awesome_notifications/awesome_notifications.dart';
+import 'package:azkar/main.dart';
 import 'package:azkar/shared/method/scalfactor_method.dart';
+import 'package:azkar/shared/notificaion_controller.dart';
+import 'package:azkar/shared/schedual.dart';
 import 'package:azkar/shared/theme/color.dart';
 import 'package:azkar/shared/theme/image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:location/location.dart';
 
 class CustamNotificationAdhaneContainer extends StatelessWidget {
   const CustamNotificationAdhaneContainer({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return SliverToBoxAdapter(
+    return InkWell(
+      onTap: () async {
+        NotificationController.schedualNotification(
+          schedule: Schedule(details: "حان الان موعد ازان العصر", time: "11"),
+        );
+      },
       child: Container(
         margin: EdgeInsets.symmetric(horizontal: 15.w),
         height: 200.h,

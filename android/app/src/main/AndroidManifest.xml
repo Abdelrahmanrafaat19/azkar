@@ -29,5 +29,17 @@
         <meta-data
             android:name="flutterEmbedding"
             android:value="2" />
+            <meta-data
+              android:name="com.google.firebase.messaging.default_notification_chammel_id"
+              android:value="pushNotification"
+              />
     </application>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM"/>
+    <uses-permission android:name="android.permission.ACCESS_NOTIFICATION_POLICY"/>
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION"/>
+
+
 </manifest>
