@@ -68,7 +68,7 @@ class _QuranScreenState extends State<QuranScreen>
         ],
       ),
       body: Padding(
-        padding: EdgeInsets.only(left: 10.w, right: 10.w),
+        padding: EdgeInsets.only(left: 10.w, right: 10.w, top: 10),
         child: CustomScrollView(
           slivers: [
             const CustamContainerQuranScreen(),

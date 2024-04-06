@@ -1,20 +1,30 @@
+import 'package:azkar/model/final_story_model.dart';
+import 'package:azkar/module/story_bady.dart';
+import 'package:azkar/shared/constant/ibrahem_data.dart';
 import 'package:azkar/shared/theme/color.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 // ignore: must_be_immutable
 class ListOfStories extends StatelessWidget {
-  String text;
-  ListOfStories({super.key, required this.text});
+  List<StoryData> data;
+  ListOfStories({super.key, required this.data});
 
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
-      itemCount: 5,
+      itemCount: data.length,
       itemBuilder: (context, index) {
         return InkWell(
           focusColor: Colors.transparent,
-          onTap: () {},
+          onTap: () {
+            Navigator.of(context).push(
+              MaterialPageRoute(
+                builder: (context) => StoryBody(
+                    data: data[index].storyBodyList, title: data[index].name),
+              ),
+            );
+          },
           child: Container(
             padding: EdgeInsets.symmetric(vertical: 10.h, horizontal: 10.w),
             decoration: BoxDecoration(
@@ -43,7 +53,7 @@ class ListOfStories extends StatelessWidget {
                   width: 10.w,
                 ),
                 Text(
-                  text,
+                  data[index].name,
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     fontSize: 18.w,

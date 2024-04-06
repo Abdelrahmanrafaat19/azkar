@@ -1,8 +1,12 @@
+import "package:azkar/model/final_story_model.dart";
+import "package:azkar/shared/constant/mosa_stoy.dart";
 import "package:azkar/shared/widget/list_of_stories.dart";
 import "package:azkar/shared/method/scalfactor_method.dart";
 import "package:azkar/shared/theme/color.dart";
 import "package:flutter/material.dart";
 import "package:flutter_screenutil/flutter_screenutil.dart";
+
+import "../shared/constant/ibrahem_data.dart";
 
 class StoryScreen extends StatefulWidget {
   const StoryScreen({super.key});
@@ -13,6 +17,10 @@ class StoryScreen extends StatefulWidget {
 
 class _StoryScreenState extends State<StoryScreen> {
   int index = 0;
+  List<StoryData> data = [
+    StoryData(name: "قصة سيدنا ابراهيم", storyBodyList: ibrahimData),
+    StoryData(name: "قصة سيدنا موسي", storyBodyList: mosaData)
+  ];
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
@@ -133,11 +141,11 @@ class _StoryScreenState extends State<StoryScreen> {
             ),
             Expanded(
               child: ListOfStories(
-                text: index == 0
-                    ? "ابو بكر الصديق"
+                data: index == 0
+                    ? data
                     : index == 1
-                        ? "عمر ابن الخطاب"
-                        : "عثمان بن عفان",
+                        ? data
+                        : data,
               ),
             )
           ],
