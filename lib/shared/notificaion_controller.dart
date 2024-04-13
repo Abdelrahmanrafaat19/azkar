@@ -80,7 +80,11 @@ class NotificationController {
             fullScreenIntent: true,
             backgroundColor: Colors.transparent,
             category: NotificationCategory.Alarm),
-        schedule: NotificationCalendar(
+        schedule: NotificationInterval(
+            interval: 60 * 60 * 24,
+            timeZone: await AwesomeNotifications().getLocalTimeZoneIdentifier(),
+            repeats: true),
+        /*  NotificationCalendar(
           hour: getHour(schedule.time),
           minute: getMinute(schedule.time),
           year: DateTime.now().year,
@@ -91,7 +95,8 @@ class NotificationController {
           allowWhileIdle: true,
           timeZone: await AwesomeNotifications().getLocalTimeZoneIdentifier(),
           repeats: true,
-        ),
+          
+        ), */
         actionButtons: [
           NotificationActionButton(
             key: "Close",

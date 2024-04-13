@@ -26,14 +26,7 @@ class _RosaryScreenState extends State<RosaryScreen> {
       appBar: AppBar(
         backgroundColor: SharedColor.mainBrown,
         centerTitle: true,
-        leadingWidth: 40.w,
-        leading: Padding(
-          padding: EdgeInsets.only(right: 10.w),
-          child: const Icon(
-            Icons.arrow_back_ios,
-            color: Colors.white,
-          ),
-        ),
+      
         title: Text(
           "السبحة",
           style: TextStyle(

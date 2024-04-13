@@ -1,6 +1,5 @@
 import 'package:azkar/model/final_story_model.dart';
 import 'package:azkar/module/story_bady.dart';
-import 'package:azkar/shared/constant/ibrahem_data.dart';
 import 'package:azkar/shared/theme/color.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';

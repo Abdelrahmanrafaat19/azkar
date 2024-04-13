@@ -1,13 +1,8 @@
 import 'package:azkar/model/story_model.dart';
-import 'package:azkar/shared/constant/ibrahem_data.dart';
-import 'package:azkar/shared/method/convert_number.dart';
 import 'package:azkar/shared/method/scalfactor_method.dart';
 import 'package:azkar/shared/theme/color.dart';
-import 'package:azkar/shared/theme/image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/svg.dart';
-import 'package:quran/quran.dart' as quran;
 
 class StoryBody extends StatefulWidget {
   List<StoryBodyData> data;
@@ -23,17 +18,19 @@ class _StoryBodyState extends State<StoryBody> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        forceMaterialTransparency: true,
         backgroundColor: const Color(0xffE9E1D4),
         centerTitle: true,
         leadingWidth: 40.w,
-        leading: Padding(
-          padding: EdgeInsets.only(right: 10.w),
-          child: SvgPicture.asset(
-            Assets.CircleEllipsis,
-            // ignore: deprecated_member_use
-            color: SharedColor.mainBrown,
-            height: 20.h,
-            width: 20.w,
+        leading: InkWell(
+          onTap: () => Navigator.of(context).pop(),
+          child: Padding(
+            padding: EdgeInsets.only(right: 10.w),
+            child: Icon(
+              Icons.arrow_back_ios,
+              color: SharedColor.babyBrown,
+              size: 30.w,
+            ),
           ),
         ),
         title: Text(
@@ -44,18 +41,6 @@ class _StoryBodyState extends State<StoryBody> {
               fontSize: 30.sp,
               fontWeight: FontWeight.w600),
         ),
-        actions: [
-          Padding(
-            padding: EdgeInsets.only(left: 10.w),
-            child: SvgPicture.asset(
-              Assets.BarsSort,
-              // ignore: deprecated_member_use
-              color: SharedColor.mainBrown,
-              height: 20.h,
-              width: 20.w,
-            ),
-          ),
-        ],
       ),
       body: ListView.builder(
         itemCount: widget.data.length,

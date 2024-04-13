@@ -1,6 +1,6 @@
 import 'package:adhan/adhan.dart';
-import 'package:azkar/module/story.dart';
-import 'package:azkar/module/story_bady.dart';
+import 'package:azkar/layout/bottom_bar_screen.dart';
+import 'package:azkar/module/splash_screen.dart';
 
 import 'package:azkar/shared/theme/color.dart';
 /* import 'package:device_preview/device_preview.dart';
@@ -79,6 +79,6 @@ class MyApp extends StatelessWidget {
             home: child,
           );
         },
-        child: const StoryScreen());
+        child: const SplachScreen());
   }
 }

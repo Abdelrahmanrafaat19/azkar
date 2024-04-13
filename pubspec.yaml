@@ -45,6 +45,8 @@ dependencies:
   intl: ^0.18.1
   location: ^5.0.3
   quran: ^1.2.3
+  curved_labeled_navigation_bar: ^2.0.2
+  flutter_launcher_icons: ^0.13.1
 
 dev_dependencies:
   flutter_lints: ^2.0.0
@@ -88,3 +90,7 @@ flutter_assets:
   output_path: lib/shared/theme
   filename: image.dart
   field_prefix: null
+flutter_icons:
+  image_path: "assets/praying.png" 
+  android: true
+  ios: true

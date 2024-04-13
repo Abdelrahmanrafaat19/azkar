@@ -1,12 +1,13 @@
 import 'package:azkar/shared/method/convert_number.dart';
 import 'package:azkar/shared/theme/color.dart';
-import 'package:azkar/shared/theme/image.dart';
+
 import 'package:azkar/shared/widget/icon_in_azkar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/svg.dart';
+
 import 'package:quran/quran.dart' as quran;
 
+// ignore: must_be_immutable
 class SurhScreen extends StatefulWidget {
   int surahNumber;
   SurhScreen({super.key, required this.surahNumber});
@@ -25,12 +26,16 @@ class _SurhScreenState extends State<SurhScreen> {
         leadingWidth: 40.w,
         leading: Padding(
           padding: EdgeInsets.only(right: 10.w),
-          child: SvgPicture.asset(
-            Assets.CircleEllipsis,
-            // ignore: deprecated_member_use
-            color: SharedColor.mainBrown,
-            height: 20.h,
-            width: 20.w,
+          child: InkWell(
+            onTap: () => Navigator.of(context).pop(),
+            child: Padding(
+              padding: EdgeInsets.only(right: 10.w),
+              child: Icon(
+                Icons.arrow_back_ios,
+                color: SharedColor.babyBrown,
+                size: 30.w,
+              ),
+            ),
           ),
         ),
         title: Text(
@@ -41,18 +46,6 @@ class _SurhScreenState extends State<SurhScreen> {
               fontSize: 30.sp,
               fontWeight: FontWeight.w600),
         ),
-        actions: [
-          Padding(
-            padding: EdgeInsets.only(left: 10.w),
-            child: SvgPicture.asset(
-              Assets.BarsSort,
-              // ignore: deprecated_member_use
-              color: SharedColor.mainBrown,
-              height: 20.h,
-              width: 20.w,
-            ),
-          ),
-        ],
       ),
       body: ListView.builder(
         itemCount: quran.getVerseCount(widget.surahNumber),
@@ -67,9 +60,19 @@ class _SurhScreenState extends State<SurhScreen> {
             )),
             child: Row(
               children: [
-                const Expanded(child: Icon(Icons.favorite_border)),
                 Expanded(
-                  flex: 3,
+                  child: IconInAzkar(
+                      widget: Text(
+                    replaceNumbers("${index + 1}"),
+                    textAlign: TextAlign.center,
+                    style: const TextStyle(
+                      fontFamily: "cairo",
+                      color: Colors.white,
+                    ),
+                  )),
+                ),
+                Expanded(
+                  flex: 6,
                   child: Container(
                     padding: const EdgeInsets.all(10),
                     /* decoration: BoxDecoration(
@@ -87,17 +90,7 @@ class _SurhScreenState extends State<SurhScreen> {
                     ),
                   ),
                 ),
-                Expanded(
-                  child: IconInAzkar(
-                      widget: Text(
-                    replaceNumbers("${index + 1}"),
-                    textAlign: TextAlign.center,
-                    style: const TextStyle(
-                      fontFamily: "cairo",
-                      color: Colors.white,
-                    ),
-                  )),
-                ),
+                const Expanded(child: Icon(Icons.favorite_border)),
               ],
             ),
           );

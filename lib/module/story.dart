@@ -1,5 +1,9 @@
 import "package:azkar/model/final_story_model.dart";
+import "package:azkar/shared/constant/ababakr.dart";
+import "package:azkar/shared/constant/alidata.dart";
 import "package:azkar/shared/constant/mosa_stoy.dart";
+import "package:azkar/shared/constant/omar.dart";
+import "package:azkar/shared/constant/osmanEbnAphan.dart";
 import "package:azkar/shared/widget/list_of_stories.dart";
 import "package:azkar/shared/method/scalfactor_method.dart";
 import "package:azkar/shared/theme/color.dart";
@@ -21,16 +25,25 @@ class _StoryScreenState extends State<StoryScreen> {
     StoryData(name: "قصة سيدنا ابراهيم", storyBodyList: ibrahimData),
     StoryData(name: "قصة سيدنا موسي", storyBodyList: mosaData)
   ];
+  List<StoryData> dataElshaba = [
+    StoryData(name: "سيرة ابو بكر الصديق", storyBodyList: ababakrData),
+    StoryData(name: "سيرة عثمان بن عفان", storyBodyList: osmanData),
+    StoryData(name: "سيرة عمر بن الخطاب", storyBodyList: omarData),
+    StoryData(name: "سيرة علي بن ابي طالب", storyBodyList: aliData)
+  ];
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
-      length: 3,
+      length: 2,
       child: Scaffold(
         appBar: AppBar(
-          leading: Icon(
-            Icons.arrow_back_ios,
-            color: Colors.white,
-            size: 30.w,
+          leading: InkWell(
+            onTap: () => Navigator.of(context).pop(),
+            child: Icon(
+              Icons.arrow_back_ios,
+              color: Colors.white,
+              size: 30.w,
+            ),
           ),
           centerTitle: true,
           title: Text(
@@ -98,28 +111,6 @@ class _StoryScreenState extends State<StoryScreen> {
                       width: 100.w,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(30.r),
-                        color: index == 1
-                            ? SharedColor.mainBrown
-                            : Colors.transparent,
-                      ),
-                      child: Text(
-                        "قصص الانبياء",
-                        style: TextStyle(
-                          color:
-                              index == 1 ? Colors.white : SharedColor.babyBrown,
-                          fontFamily: 'amiri',
-                          fontWeight: FontWeight.w600,
-                          fontSize: 15.sp,
-                        ),
-                      ),
-                    ),
-                  ),
-                  Tab(
-                    icon: Container(
-                      alignment: Alignment.center,
-                      width: 100.w,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(30.r),
                         color: index == 2
                             ? SharedColor.mainBrown
                             : Colors.transparent,
@@ -141,11 +132,7 @@ class _StoryScreenState extends State<StoryScreen> {
             ),
             Expanded(
               child: ListOfStories(
-                data: index == 0
-                    ? data
-                    : index == 1
-                        ? data
-                        : data,
+                data: index == 0 ? data : dataElshaba,
               ),
             )
           ],
