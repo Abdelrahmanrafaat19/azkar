@@ -111,7 +111,7 @@ class _StoryScreenState extends State<StoryScreen> {
                       width: 100.w,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(30.r),
-                        color: index == 2
+                        color: index == 1
                             ? SharedColor.mainBrown
                             : Colors.transparent,
                       ),
@@ -119,7 +119,7 @@ class _StoryScreenState extends State<StoryScreen> {
                         "قصص الصحابة",
                         style: TextStyle(
                           color:
-                              index == 2 ? Colors.white : SharedColor.babyBrown,
+                              index == 1 ? Colors.white : SharedColor.babyBrown,
                           fontFamily: 'amiri',
                           fontWeight: FontWeight.w600,
                           fontSize: 15.sp,
